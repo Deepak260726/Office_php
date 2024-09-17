@@ -1,0 +1,11 @@
+/**.dropdown-toggle.active-dropdown::after {
+    transform: rotate(-90deg);
+}**/
+
+.dropdown-toggle .active-dropdown {
+    color: #04246A;
+}
+
+.header .dropdown-menu .show {
+  margin-top: -9px;
+}

@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Simple Transactional Email</title>
+  <style>
+    @media only screen and (max-width: 620px) {
+      table.body h1 {
+        font-size: 28px !important;
+        margin-bottom: 10px !important;
+      }
+
+      table.body p,
+      table.body ul,
+      table.body ol,
+      table.body td,
+      table.body span,
+      table.body a {
+        font-size: 16px !important;
+      }
+
+      table.body .wrapper,
+      table.body .article {
+        padding: 10px !important;
+      }
+
+      table.body .content {
+        padding: 0 !important;
+      }
+
+      table.body .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+
+      table.body .main {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        border-right-width: 0 !important;
+      }
+
+      table.body .btn table {
+        width: 100% !important;
+      }
+
+      table.body .btn a {
+        width: 100% !important;
+      }
+
+      table.body .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+    }
+
+    @media all {
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      .apple-link a {
+        color: inherit !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        text-decoration: none !important;
+      }
+
+      #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+
+      .btn-primary a:hover {
+        background-color: #B20101 !important;
+        border-color: #B20101 !important;
+        color: #ffffff !important;
+      }
+    }
+  </style>
+</head>
+
+<body
+  style="background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <span class="preheader"
+    style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0; color: #0a2071;">This
+    is preheader text. Some clients will show this text as a preview.</span>
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body"
+    style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f6f6f6; width: 100%;"
+    width="100%" bgcolor="#f6f6f6">
+    <tr>
+      <td style="font-family: sans-serif; font-size: 16px; vertical-align: top;" valign="top">&nbsp;</td>
+      <td class="container"
+        style="font-family: sans-serif; font-size: 16px; vertical-align: top; display: block; max-width: 630px; padding: 10px; width: 630px; margin: 0 auto;"
+        width="630" valign="top">
+        <div class="content"
+          style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 630px; padding: 10px;">
+
+          <!-- BANNER -->
+          <table role="presentation" class="main"
+            style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border-radius: 0px; width: 100%;"
+            width="100%">
+            <tr>
+              <td width="50%">
+                <a href="https://api-portal.cma-cgm.com/" target="_blank" style="color: #0a2071;">
+                  <img src="cmacgm-h57.png" width="220" alt="CMA CGM API Solutions" style="border: 0;">
+                </a>
+              </td>
+              <td width="50%" style="text-align: right;;" align="right" valign="middle">
+                <span style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px; color: #ffffff; background-color: #0a2071;">&nbsp; Copy Bill of Lading & Sea Waybill &nbsp; </span>
+              </td>
+            </tr>
+          </table>
+          <table role="presentation" class="main"
+            style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border-radius: 0px; width: 100%;"
+            width="100%">
+            <tr>
+              <td><a href="https://api-portal.cma-cgm.com/" target="_blank" style="color: #0a2071;"><img
+                    src="API-EDI Product Banner.jpg" width="610" alt="CMA CGM API Solutions" style="border: 0;"></a>
+              </td>
+            </tr>
+          </table>
+
+          <!-- START CENTERED WHITE CONTAINER -->
+          <table role="presentation" class="main"
+            style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border-radius: 0px; width: 100%;"
+            width="100%">
+
+            <!-- START MAIN CONTENT AREA -->
+            <tr>
+              <td class="wrapper"
+                style="font-family: sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 20px;"
+                valign="top">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                  style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                  width="100%">
+                  <tr>
+                    <td style="font-family: sans-serif; font-size: 16px; vertical-align: top;" valign="top">
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px; color: #0a2071;">
+                        Hi {Customer Name},
+                      </p>
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px; color: #0a2071;">
+                        Thank you for choosing our Copy BL PDF API services.
+                      </p>
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px; color: #0a2071;">
+                        We have completed the set up and activated the API in our production environment and now you
+                        will be able to retrieve the copy BL PDF via our API.
+                      </p>
+
+                      <p
+                        style="font-family: sans-serif; font-size: 19px; font-weight: bold; margin: 0; margin-bottom: 15px; color: #0a2071; line-height: 1.15;">
+                        Authentication
+                      </p>
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                        style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                        width="100%">
+                        <tr>
+                          <td
+                            style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071; width:30%;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; color: #0a2071;">Authentication
+                              Method</span></td>
+                          <td style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: bold; margin: 0; color: #0a2071;">
+                              OAuth2</span></td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071; width:30%;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; color: #0a2071;">Auth
+                              URL (PROD)</span></td>
+                          <td style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: bold; margin: 0; color: #0a2071;">
+                              https://auth.cma-cgm.com/as/token.oauth2</span></td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071; width:30%;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; color: #0a2071;">Scope</span>
+                          </td>
+                          <td style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: bold; margin: 0; color: #0a2071;">
+                              blcopy:load:be</span></td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071; width:30%;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; color: #0a2071;">Client
+                              Id & Secret</span></td>
+                          <td style="font-family: sans-serif; font-size: 14px; vertical-align: middle; color: #0a2071;"
+                            valign="top"><span
+                              style="font-family: sans-serif; font-size: 14px; font-weight: bold; margin: 0; color: #0a2071;">
+                              <i>Shared via seperate email</i></span></td>
+                        </tr>
+                      </table>
+
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-top: 15px; margin-bottom: 15px; color: #0a2071;">
+                        Kindly ref our <a href="https://api-portal.cma-cgm.com/usage-guide#authentication"
+                          style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; color: #E20101;"
+                          target="_blank">guide on authentication</a> for additional information.
+                      </p>
+
+                      <p
+                        style="font-family: sans-serif; font-size: 19px; font-weight: bold; margin: 0; margin-bottom: 15px; color: #0a2071; line-height: 1.15;">
+                        Copy BL PDF API
+                      </p>
+
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px; color: #0a2071;">
+                        Our API offers access to Sea Waybill & Non-Negotiable copy of Original BLs in PDF format.
+                      </p>
+
+                      <p
+                        style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px; color: #0a2071;">
+                        Base URL (PROD): <span
+                          style="font-family: sans-serif; font-size: 14px; font-weight: bold; margin: 0; color: #0a2071;">https://apis.cma-cgm.net/shipping/shippingdocument/blcopy/v1</span>
+                      </p>
+
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px; color: #0a2071;">
+                        We have attached <a
+                          href="https://api-portal.cma-cgm.com/products/api/shipping.shippingdocument.blcopy.v1"
+                          style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; color: #E20101;"
+                          target="_blank">swagger</a> and user guide for your easy reference. And you may refer API
+                        Portal for additional information or for monitoring your API usage.
+                      </p>
+
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                        style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                        width="100%">
+                        <tr>
+                          <td
+                            style="font-family: sans-serif; font-size: 1px; background:none; border:solid 1px #E8E8E8; border-width:1px 0 0 0; height:1px; width:100%; margin:0px 0px 0px 0px; padding-top:10px; padding-bottom:0px;">
+                            &nbsp;</td>
+                        </tr>
+                      </table>
+
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
+                        style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;"
+                        width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="left"
+                              style="font-family: sans-serif; font-size: 16px; vertical-align: top; padding-bottom: 15px;"
+                              valign="top">
+                              <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                                width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td class="btn-primary"
+                                      style="font-family: sans-serif; font-size: 16px; vertical-align: top; border-radius: 5px; text-align: right; background-color: #ffffff; color: #E20101;"
+                                      valign="top" align="right" bgcolor="#ffffff" width="45%">
+                                      <a href="https://api-portal.cma-cgm.com/contact-us/report-issue" target="_blank"
+                                        style="border: solid 1px #E20101; border-radius: 0; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 15px; font-weight: normal; margin: 0; padding: 10px 10px; text-decoration: none; text-transform: capitalize; background-color: #ffffff; border-color: #E20101; color: #E20101;">Contact
+                                        Support</a>
+                                    </td>
+                                    <td class="btn-primary"
+                                      style="font-family: sans-serif; font-size: 15px; vertical-align: top; border-radius: 5px; text-align: right; background-color: #ffffff; color: #E20101;"
+                                      valign="top" align="right" bgcolor="#ffffff" width="10%">
+                                      &nbsp;
+                                    </td>
+                                    <td class="btn-primary"
+                                      style="font-family: sans-serif; font-size: 15px; vertical-align: top; border-radius: 5px; text-align: left; background-color: #ffffff; color: #E20101;"
+                                      valign="top" align="left" bgcolor="#ffffff" width="45%">
+                                      <a href="https://api-portal.cma-cgm.com/" target="_blank"
+                                        style="border: solid 1px #E20101; border-radius: 0; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 15px; font-weight: normal; margin: 0; padding: 10px 10px; text-decoration: none; text-transform: capitalize; background-color: #ffffff; border-color: #E20101; color: #E20101;">Access
+                                        API Portal</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px; color: #0a2071;">
+                        Please do not hesitate to reach our professional support team on the above link for any
+                        assistance. </p>
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px; color: #0a2071;">
+                        We wish you a 'fair winds' and successful integration with CMA CGM.</p>
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px; color: #0a2071;">
+                        Best Regards,</p>
+                      <p
+                        style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px; color: #0a2071;">
+                        CMA CGM eCommerce Department</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- END MAIN CONTENT AREA -->
+          </table>
+          <!-- END CENTERED WHITE CONTAINER -->
+
+          <!-- START FOOTER -->
+          <div class="footer" style="clear: both; margin-top: 10px; text-align: center; width: 100%;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+              style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+              width="100%">
+              <tr>
+                <td class="content-block"
+                  style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #505359; font-size: 12px; text-align: center;"
+                  valign="top" align="center">
+                  <p class="apple-link" style="color: #505359; font-size: 12px; text-align: center;">
+                    You received this email due to your ongoing relationship with CMA CGM, or its affiliates
+                    (collectively “CMA CGM Group”).
+                  </p>
+
+                  <p class="apple-link" style="color: #505359; font-size: 12px; text-align: center;">
+                    CMA CGM - Boulevard Jacques Saadé - 4, Quai d'Arenc
+                    <br>
+                    13235 Marseille cedex 02 - France
+                  </p>
+                  <p>
+                    <a href="https://www.cmacgm-group.com/en/legal-terms" target="_blank"
+                      style="text-decoration: underline; color: #505359; font-size: 12px; text-align: center;">Legal
+                      Terms</a> | <a href="https://cmacgm-group.com/en/privacy-notice" target="_blank"
+                      style="text-decoration: underline; color: #505359; font-size: 12px; text-align: center;">Privacy
+                      Policy</a>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="content-block powered-by"
+                  style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #505359; font-size: 12px; text-align: center;"
+                  valign="top" align="center">
+                  © 2023 CMA CGM. All Rights Reserved.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- END FOOTER -->
+
+        </div>
+      </td>
+      <td style="font-family: sans-serif; font-size: 16px; vertical-align: top;" valign="top">&nbsp;</td>
+    </tr>
+  </table>
+</body>
+
+</html>
